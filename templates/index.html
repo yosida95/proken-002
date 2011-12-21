@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="copyright" content="Copyright (C) yosida95 All Rights Reserved." />
+<meta name="Author" content="yosida95" />
+<title>BSS</title>
+</head>
+<body>
+{% for post in posts %}
+<p>{{ post[0] }} : {{ post[1] }}</p>
+{% endfor %}
+<form action="/post" method="POST">
+<dl>
+<dt>{{ form.name.label }}</dt>
+<dd>{{ form.name() }}</dd>
+<dt>{{ form.text.label }}</dt>
+<dd>{{ form.text() }}</dd>
+</dl>
+<input type="submit" value="投稿" />
+</form>
+</body>
+</html>
